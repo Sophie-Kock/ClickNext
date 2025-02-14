@@ -1,3 +1,5 @@
-import './styles/style.css'
+import "./styles/style.css";
 
-const apiKey = import.meta.env.VITE_CLICKNEXT_KEY
+const apiKey = import.meta.env.VITE_clickNext_KEY;
+
+
