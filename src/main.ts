@@ -6,14 +6,14 @@ const api_url = "https://api.pexels.com/v1/curated?per_page=1";
 const imageElement = document.getElementById("image") as HTMLImageElement;
 const nextButton = document.getElementById("next") as HTMLButtonElement;
 
-// Funktion, um ein Bild von der API zu laden
+// Function, um ein picture von der API zu laden
 async function fetchImage() {
   try {
-    const randomPage = Math.floor(Math.random() * 100) + 1; // Zufällige Seite zwischen 1 und 100
+    const randomPage = Math.floor(Math.random() * 100) + 1; // random page between 1 and 100
     const response = await fetch(`${api_url}&page=${randomPage}`, {
       headers: {
-        Authorization: apiKey
-      }
+        Authorization: apiKey,
+      },
     });
 
     if (!response.ok) {
@@ -21,7 +21,7 @@ async function fetchImage() {
     }
 
     const data = await response.json();
-    const imageUrl = data.photos[0].src.large; // Holt die Bild-URL
+    const imageUrl = data.photos[0].src.large; // take pic-url
 
     // Setzt das Bild in das <img>-Element
     imageElement.src = imageUrl;
@@ -39,4 +39,3 @@ if (nextButton) {
 
 // Erstes Bild beim Laden der Seite abrufen
 fetchImage();
-
