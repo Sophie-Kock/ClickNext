@@ -17,16 +17,16 @@ async function fetchImage() {
     });
 
     if (!response.ok) {
-      throw new Error(`Fehler: ${response.status}`);
+      throw new Error(`Error: ${response.status}`);
     }
 
     const data = await response.json();
     const imageUrl = data.photos[0].src.large; // take pic-url
 
-    // Setzt das Bild in das <img>-Element
+    // Set the image in the <img> element
     imageElement.src = imageUrl;
   } catch (error) {
-    console.error("Fehler beim Laden des Bildes:", error);
+    console.error("Error loading the image:", error);
   }
 }
 
@@ -37,5 +37,5 @@ if (nextButton) {
   console.error("Button element not found");
 }
 
-// Erstes Bild beim Laden der Seite abrufen
+// Fetch the first image when the page loads
 fetchImage();
