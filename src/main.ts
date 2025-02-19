@@ -13,8 +13,8 @@ let currentIndex = 0;
 // Function, um ein Bild von der API zu laden
 async function fetchImages() {
   try {
-    const randomPage = Math.floor(Math.random() * 100) + 1; // zufällige Seite zwischen 1 und 100
-    const response = await fetch(`${api_url}&page=${randomPage}`, {
+    const randomImg = Math.floor(Math.random() * 100) + 1; // zufällige Seite zwischen 1 und 100
+    const response = await fetch(`${api_url}&page=${randomImg}`, {
       headers: {
         Authorization: apiKey,
       },
